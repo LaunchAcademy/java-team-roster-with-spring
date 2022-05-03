@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>All Teams</title>
+</head>
+<body>
+  <h2>All the Teams</h2>
+  <ul th:each="team, iterationStatus : ${teamsList}">
+    <li th:object="${team}">
+      <!--<a th:href="@{teams/{id}(id = ${iterationStatus.index})}" />-->
+      <a th:href="@{'/teams/' + ${iterationStatus.index}}" th:text="*{teamName}"></a>
+    </li>
+  </ul>
+</body>
+</html>

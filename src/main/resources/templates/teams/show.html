@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Specific Team</title>
+</head>
+<body>
+  <h3 th:text="${team.teamName} + ' Team Details'"></h3>
+  <ul th:each="player : ${team.players}">
+    <li th:text="${player.name} + ' plays ' + ${player.position}"></li>
+  </ul>
+</body>
+</html>
